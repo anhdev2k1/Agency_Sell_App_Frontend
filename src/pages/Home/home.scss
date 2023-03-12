@@ -7,22 +7,54 @@
         max-height: 80px;
         text-align: center;
         line-height: 80px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 2;
         &__logo{
             font-size: 4rem;
             cursor: pointer;
             
+        }
+        .navbar__btn{
+            button{
+                width: 120px;
+                height: 40px;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                background: linear-gradient(90deg, hsla(176, 61%, 87%, 1) 0%, hsla(150, 54%, 86%, 1) 50%, hsla(301, 68%, 84%, 1) 100%);
+                font-size: 1.3rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+                border-radius: 50px;
+            }
         }
     }
     .header{
         display: flex;
         justify-content: space-between;
         align-items: center;
-       
+        position: relative;
+       .circle__header{
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            bottom: -40px;
+            right: 450px;
+            background: linear-gradient(90deg, hsla(176, 61%, 87%, 1) 0%, hsla(150, 54%, 86%, 1) 50%, hsla(301, 68%, 84%, 1) 100%);
+            filter: blur(15px);
+            z-index: 1;
+        }
         .header__title{
             width: 450px;
             height: max-content;
             padding: 20px;
             gap: 20px;
+            position: relative;
+            z-index: 2;
             h2{
                 font-size: 4rem;
                 color: black;
@@ -32,6 +64,10 @@
                 padding: 15px 0;
                 line-height: 22.5px;
             }
+        }
+        .header__video{
+            position: relative;
+            z-index: 2;
         }
         .header__btn{
             width: 240px;
@@ -47,32 +83,90 @@
             box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
         }
     }
+    .custom-shape-divider-bottom-1678628010 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+    }
+    
+    .custom-shape-divider-bottom-1678628010 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 173px;
+        transform: rotateY(180deg);
+    }
+    
+    .custom-shape-divider-bottom-1678628010 .shape-fill {
+        fill: hsla(301, 68%, 84%, 1);
+    }
+    .custom-shape-divider-top-1678628517 {
+        position: absolute;
+        bottom: -170px;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    
+    .custom-shape-divider-top-1678628517 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 173px;
+        transform: rotateY(180deg);
+    }
+    
+    .custom-shape-divider-top-1678628517 .shape-fill {
+        fill: hsla(301, 68%, 84%, 1);
+    }
     .content{
         min-height: 200px;
-        margin-top: 150px;
+        margin-top: 400px;
+        .content__box:nth-of-type(1), .content__box:nth-of-type(2){
+            margin-top: 100px;
+        }
         .content__box{
-            margin-bottom: 80px;
             h3{
                 font-size: 3.5rem;
                 text-transform: uppercase;
                 text-align: center;
                 margin-bottom: 30px;
-                
             }
             .content__flex{
                 display: flex;
-                
                 align-items: center;
                 gap: 20px;
+                position: relative;
+                .circle__positon{
+                    position: absolute;
+                    width: 300px;
+                    height: 300px;
+                    border-radius: 50%;
+                    top: 40px;
+                    right: -70px;
+                    background: linear-gradient(90deg, hsla(176, 61%, 87%, 1) 0%, hsla(150, 54%, 86%, 1) 50%, hsla(301, 68%, 84%, 1) 100%);
+                    filter: blur(6px);
+                }
                 img{
                     flex: 1;
                 }
                 .content__desc{
                   width: 520px;
-                  font-size: 2rem;
+                  font-size: 1.8rem;
                   line-height: 26.5px;
+                  padding: 15px;
+                  border-radius: 10px;
+                  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+                  z-index: 2;
+                  
                 }
             }
         }
+        
     }
 }
