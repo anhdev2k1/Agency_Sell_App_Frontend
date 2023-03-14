@@ -12,13 +12,13 @@ const Home = () => {
           <div className="navbar">
             <h1 className="navbar__logo">LOGO.</h1>
             <div className="navbar__btn">
-              <button>
-                <Link to="/register" style={{ color: "black" }}>
+              <button style={{ backgroundColor: "#333" }}>
+                <Link to="/register" style={{ color: "white" }}>
                   Đăng ký
                 </Link>
               </button>
               <button style={{ marginLeft: "20px" }}>
-                <Link to="/login" style={{ color: "black" }}>
+                <Link to="/login" style={{ color: "#333" }}>
                   Đăng nhập
                 </Link>
               </button>

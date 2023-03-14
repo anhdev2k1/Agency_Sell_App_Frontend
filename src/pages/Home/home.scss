@@ -11,6 +11,7 @@
         justify-content: space-between;
         position: relative;
         z-index: 2;
+        margin-bottom: 30px;
         &__logo{
             font-size: 4rem;
             cursor: pointer;
@@ -23,7 +24,7 @@
                 border: none;
                 outline: none;
                 cursor: pointer;
-                background: linear-gradient(90deg, hsla(176, 61%, 87%, 1) 0%, hsla(150, 54%, 86%, 1) 50%, hsla(301, 68%, 84%, 1) 100%);
+                background-color: white;
                 font-size: 1.3rem;
                 font-weight: 600;
                 text-transform: uppercase;
@@ -57,17 +58,21 @@
             z-index: 2;
             h2{
                 font-size: 4rem;
-                color: black;
+                color: #333;
             }
             &-desc{
                 font-size: 1.5rem;
                 padding: 15px 0;
                 line-height: 22.5px;
+                color: #333;
             }
         }
         .header__video{
             position: relative;
             z-index: 2;
+            // padding: 10px;
+            border-radius: 20px;
+            overflow: hidden;
         }
         .header__btn{
             width: 240px;
@@ -76,11 +81,12 @@
             background: none;
             border: none;
             cursor: pointer;
-            background: linear-gradient(90deg, hsla(176, 61%, 87%, 1) 0%, hsla(150, 54%, 86%, 1) 50%, hsla(301, 68%, 84%, 1) 100%);
+            // background: linear-gradient(90deg, hsla(176, 61%, 87%, 1) 0%, hsla(150, 54%, 86%, 1) 50%, hsla(301, 68%, 84%, 1) 100%);
             font-size: 1.8rem;
             font-weight: 600;
             text-transform: uppercase;
             box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+            background-color: white;
         }
     }
     .custom-shape-divider-bottom-1678628010 {
@@ -136,6 +142,7 @@
                 text-transform: uppercase;
                 text-align: center;
                 margin-bottom: 30px;
+                color: #333;
             }
             .content__flex{
                 display: flex;
@@ -159,10 +166,11 @@
                   width: 520px;
                   font-size: 1.8rem;
                   line-height: 26.5px;
-                  padding: 15px;
+                  padding: 20px;
                   border-radius: 10px;
                   box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
                   z-index: 2;
+                //   background-color: rgba(255, 255, 255, 0.737);
                   
                 }
             }
