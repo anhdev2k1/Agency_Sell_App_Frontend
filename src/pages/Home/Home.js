@@ -3,25 +3,29 @@ import video from "../../assets/images/video.mp4";
 import bg1 from "../../assets/images/home-bg5.png";
 import bg2 from "../../assets/images/home-bg1.png";
 import bg3 from "../../assets/images/home-bg3.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
       <div className="background">
         <div className="container">
-          <div className="navbar">
+          <div className="navbar__home">
             <h1 className="navbar__logo">LOGO.</h1>
-            <div className="navbar__btn">
-              <button style={{ backgroundColor: "#333" }}>
-                <Link to="/register" style={{ color: "white" }}>
-                  Đăng ký
-                </Link>
-              </button>
-              <button style={{ marginLeft: "20px" }}>
-                <Link to="/login" style={{ color: "#333" }}>
-                  Đăng nhập
-                </Link>
-              </button>
+            <div className="navbar__list-btn">
+              <Link
+                to="/register"
+                style={{ color: "white", backgroundColor: "#333" }}
+                className="navbar__btn-item"
+              >
+                Đăng ký
+              </Link>
+              <Link
+                to="/login"
+                className="navbar__btn-item"
+                style={{ color: "#333", marginLeft: "20px" }}
+              >
+                Đăng nhập
+              </Link>
             </div>
           </div>
           <div className="header">
@@ -35,11 +39,13 @@ const Home = () => {
                 hàng của riêng mình và bán sản phẩm của mình trên trang web của
                 chúng tôi nền tảng thương mại với hơn 5000+ người bán khác.
               </p>
-              <button className="header__btn">
-                <Link to="/explore" style={{ color: "black" }}>
-                  Bắt đầu thôi!
-                </Link>
-              </button>
+              <Link
+                to="/explore"
+                style={{ color: "black" }}
+                className="header__btn"
+              >
+                Bắt đầu thôi!
+              </Link>
             </div>
             <div className="header__video">
               <video width="620" autoPlay="autoplay" loop muted>

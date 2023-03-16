@@ -1,13 +1,37 @@
 import { Button, Form, Input } from "antd";
 import { LockOutlined, MailOutlined } from "@ant-design/icons";
+import axios from "axios";
+import { useState } from "react";
+import { Navigate } from "react-router-dom";
 const Login = () => {
   const [form] = Form.useForm();
+  const [currentUser, setCurrentUser] = useState({});
+  const [error, setError] = useState("");
+  const createUser = async (data) => {
+    try {
+      const res = await axios({
+        method: "POST",
+        url: "http://localhost:5000/api/auth/user/login",
+        data: data,
+        headers: { "Content-Type": "application/json" },
+      });
+      setCurrentUser(res.data.data);
+      localStorage.setItem("token", JSON.stringify(res.data.data.token));
+    } catch (error) {
+      setError(error.response.data.error);
+    }
+  };
   const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+    createUser(values);
   };
   return (
     <>
       <div className="form__container">
+        {Object.keys(currentUser).length !== 0 ? (
+          <Navigate to="/explore" replace="true" />
+        ) : (
+          <p>{error}</p>
+        )}
         <div className="circle__one circle"></div>
         <div className="circle__two circle"></div>
         <h2 className="form__container-title">ĐĂNG NHẬP TÀI KHOẢN</h2>

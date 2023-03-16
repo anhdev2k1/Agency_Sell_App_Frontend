@@ -1,7 +1,9 @@
+import Navbar from "../components/Navbar/navbar";
+
 const DefaultLayout = ({ children }) => {
   return (
     <>
-      <h2>This is Default Layout</h2>
+      <Navbar />
       {children}
     </>
   );
