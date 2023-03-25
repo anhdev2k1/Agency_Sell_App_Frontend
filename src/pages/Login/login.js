@@ -3,10 +3,13 @@ import { LockOutlined, MailOutlined } from "@ant-design/icons";
 import axios from "axios";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { checkUser } from "../../redux/features/userSlice";
 const Login = () => {
   const [form] = Form.useForm();
   const [currentUser, setCurrentUser] = useState({});
   const [error, setError] = useState("");
+  const dispatch = useDispatch();
   const createUser = async (data) => {
     try {
       const res = await axios({
@@ -15,6 +18,7 @@ const Login = () => {
         data: data,
         headers: { "Content-Type": "application/json" },
       });
+      dispatch(checkUser(res.data.data));
       setCurrentUser(res.data.data);
       localStorage.setItem("token", JSON.stringify(res.data.data.token));
     } catch (error) {

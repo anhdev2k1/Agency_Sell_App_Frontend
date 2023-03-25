@@ -5,10 +5,13 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { checkUser } from "../../redux/features/userSlice";
 const Register = () => {
   const [form] = Form.useForm();
   const [currentUser, setCurrentUser] = useState({});
   const [error, setError] = useState("");
+  const dispatch = useDispatch();
   const createUser = async (data) => {
     try {
       const res = await axios({
@@ -17,13 +20,15 @@ const Register = () => {
         data: data,
         headers: { "Content-Type": "application/json" },
       });
+      dispatch(checkUser(res.data.data))
       setCurrentUser(res.data.data);
-      localStorage.setItem("token",JSON.stringify(res.data.data.token))
+      localStorage.setItem("token", JSON.stringify(res.data.data.token));
     } catch (error) {
       setError(error.response.data.error);
     }
   };
   const onFinish = (values) => {
+    console.log(values);
     const { confirm, ...rest } = values;
     createUser(rest);
   };
